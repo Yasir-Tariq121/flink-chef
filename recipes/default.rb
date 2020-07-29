@@ -1,7 +1,6 @@
-  
 #
-# Cookbook Name:: Default
+# Cookbook:: yasircookbook
 # Recipe:: default
 #
-# Copyright (c) 2016 The Authors, All Rights Reserved.
-include_recipe 'GetS3::server'
+# Copyright:: 2020, The Authors, All Rights Reserved.
+include_recipe 'yasircookbook::Get_S3'
