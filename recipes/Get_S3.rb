@@ -7,8 +7,11 @@
 # file_name = "FILE_NAME"
 
 #Install java (required for Flink)
-package 'oracle-java7-installer' do
-    action :install
+# package 'oracle-java7-installer' do
+#     action :install
+# end
+apt_package 'default-jdk' do
+    action :install # defaults to :install if not specified
 end
   
   
