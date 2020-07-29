@@ -19,7 +19,7 @@ remote_file '/flink-1.11.1-bin-scala_2.11.tgz' do
 end
 
 #Extract the Flink package
-archive_file 'extract_tar' do
+archive_file 'flink-1.11.1' do
     path   '/flink-1.11.1-bin-scala_2.11.tgz' 
     destination '/'
     action :extract
