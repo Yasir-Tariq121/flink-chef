@@ -9,7 +9,7 @@
 #Install java (required for Flink)
 package 'oracle-java7-installer' do
     action :install
-  end
+end
   
   
 #Get S3 package
@@ -19,13 +19,16 @@ remote_file '/flink-1.11.1-bin-scala_2.11.tgz' do
 end
 
 #Extract the Flink package
-archive_file 'flink-1.11.1' do
-    path   '/flink-1.11.1-bin-scala_2.11.tgz' 
-    destination '/'
-    action :extract
+# archive_file 'flink-1.11.1' do
+#     path   '/flink-1.11.1-bin-scala_2.11.tgz' 
+#     destination '/'
+#     action :extract
+# end
+execute "extract" do
+    command "sh tar -xvf /flink-1.11.1-bin-scala_2.11.tgz"
 end
 
 # Configure Flink
 execute "Flink" do
-command "sh /flink-1.11.1/flink-1.11.1/bin/start-cluster.sh"
+    command "sh /flink-1.11.1/flink-1.11.1/bin/start-cluster.sh"
 end
