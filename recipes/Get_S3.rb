@@ -31,17 +31,21 @@ end
 # execute "extract" do
 #     command "sh tar -xvf /flink-1.11.1-bin-scala_2.11.tgz"
 # end
-bash 'flink-1.11.1' do
-    user 'root'
-    cwd '/'
-    code <<-EOH
-      tar -zxf flink-1.11.1-bin-scala_2.11.tgz
-      cd flink-1.11.1/flink-1.11.1/bin
-      start-cluster.sh
-    EOH
-  end
+# bash 'flink-1.11.1' do
+#     user 'root'
+#     cwd '/'
+#     code <<-EOH
+#       tar -zxf flink-1.11.1-bin-scala_2.11.tgz
+#       cd flink-1.11.1/flink-1.11.1/bin
+#       start-cluster.sh
+#     EOH
+#   end
+execute 'extract_flink' do
+    command 'tar zxvf /flink-1.11.1-bin-scala_2.11.tgz -C /'
+    action :run
+end
 
-# # Configure Flink
-# execute "Flink" do
-#     command "sh /flink-1.11.1/flink-1.11.1/bin/start-cluster.sh"
-# end
+# Configure Flink
+execute "Flink" do
+    command "sh flink-1.11.1/bin/start-cluster.sh"
+end
