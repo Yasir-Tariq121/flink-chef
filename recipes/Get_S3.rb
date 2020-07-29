@@ -46,6 +46,8 @@ execute 'extract_flink' do
 end
 
 # Configure Flink
-execute "Flink" do
-    command "sh flink-1.11.1/bin/start-cluster.sh"
+execute 'flink' do
+    user "root"
+    command 'sudo bash /flink-1.11.1/bin/start-cluster.sh'
+    action :run
 end
