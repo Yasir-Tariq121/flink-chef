@@ -18,6 +18,7 @@ end
 #Get S3 package
 remote_file '/flink-1.11.1-bin-scala_2.11.tgz' do
     source 'https://yasir-test-bucket.s3-us-west-2.amazonaws.com/flink-1.11.1-bin-scala_2.11.tgz'
+    mode '0777'
     action :create
 end
 
