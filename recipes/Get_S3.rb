@@ -24,13 +24,6 @@ bash 'flink-1.11.1' do
   end
 
 
-  #OR
-
-# execute 'extract_flink' do
-#     command 'tar zxvf /flink-1.11.1-bin-scala_2.11.tgz -C /'
-#     action :run
-# end
-
 # Configure Flink
 execute 'flink' do
     user "root"
