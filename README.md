@@ -1,4 +1,4 @@
-# yasircookbook
+# Apache Flink Cookbook
 
-TODO: Enter the cookbook description here.
+This cookbok configures and sets up Apache Flink on A Ubuntu instance
 

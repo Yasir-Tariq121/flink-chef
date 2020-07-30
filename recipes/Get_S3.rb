@@ -15,6 +15,7 @@ remote_file '/flink-1.11.1-bin-scala_2.11.tgz' do
     action :create
 end
 
+#Extract package
 bash 'flink-1.11.1' do
     user 'root'
     cwd '/'
