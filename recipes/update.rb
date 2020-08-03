@@ -28,10 +28,20 @@ bash 'Updated_Flink' do
     cwd '/'
     code <<-EOH
       tar -zxf Updated-Flink.tgz
-      mv /Updated-Flink/conf/flink-conf.yaml /flink-1.11.1/conf
-      mv /Updated-Flink/conf/log4j.properties /flink-1.11.1/conf
     EOH
   end
+#Move conf.yaml
+execute 'move conf' do
+  user "root"
+  command 'sudo mv /Updated-Flink/conf/flink-conf.yaml /flink-1.11.1/conf'
+  action :run
+end
+#Move log file
+execute 'move log' do
+  user "root"
+  command 'sudo mv /Updated-Flink/conf/log4j.properties /flink-1.11.1/conf'
+  action :run
+end
 
 
 # Configure Flink
