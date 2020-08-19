@@ -1,0 +1,10 @@
+[Unit]
+Description=Apache Flink
+After=network.target
+
+[Service]
+Type=forking
+LimitNOFILE=99999
+ExecStart=<%= node['kafka']['dir'] %>start-cluster.sh -daemon /config/server.properties
+ExecStop=<%= node['kafka']['dir'] %>stop-cluster.sh
+User=<%= node['flink']['user'] %>
