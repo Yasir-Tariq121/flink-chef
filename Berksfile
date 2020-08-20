@@ -1,4 +1,4 @@
 source 'https://supermarket.chef.io'
 
 metadata
-cookbook 'tar', '~> 1.1.0'
+cookbook 'tar', '~> 2.2.0'
