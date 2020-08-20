@@ -2,7 +2,6 @@
 # Cookbook Name:: yasircookbook
 # Recipe:: Get_S3
 #
-include_recipe 'tar'
 package [ 'supervisor', 'default-jdk' ]
 
 remote_file '/tmp/flink-1.11.1-bin-scala_2.11.tgz' do
