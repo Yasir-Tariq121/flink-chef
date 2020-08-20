@@ -49,11 +49,23 @@ end
 #     tar_flags [ '-C' ]
 # end
 
-archive_file '/tmp/flink-1.11.1-bin-scala_2.11.tgz' do
-    destination      '/'
-    mode             '777'
-end
+# archive_file '/tmp/flink-1.11.1-bin-scala_2.11.tgz' do
+#     destination      '/'
+#     mode             '777'
+# end
+execute 'extract_flink' do
+    command 'tar zxvf /tmp/flink-1.11.1-bin-scala_2.11.tgz -C /'
+    action :run
 
+# #Extract package
+# bash 'flink-1.11.1' do
+#     user 'root'
+#     cwd '/'
+#     code <<-EOH
+#       tar -zxf flink-1.11.1-bin-scala_2.11.tgz
+#     EOH
+#   end
+# end
 template '/etc/systemd/system/flink.service' do
     source 'flink.service.erb'
     owner  'root'
