@@ -1,7 +1,6 @@
 [program:flink]
 command=<%= node['flink']['dir'] %>start-cluster.sh
 numprocs=1
-directory=<%= node['nd']['home'] %>/nd-impl
 autostart=true
 autorestart=unexpected
 startsecs=10
