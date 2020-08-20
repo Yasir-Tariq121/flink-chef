@@ -1,2 +1,6 @@
 [program:flink]
-command=flink-manager -Dconfig.file=/etc/flink-manager/application.conf -Dapplication.home=/usr/share/flink-manager
+command=flink-manager
+autostart=true
+autorestart=true
+stderr_logfile=/var/log/flink.err.log
+stdout_logfile=/var/log/flink.out.log
