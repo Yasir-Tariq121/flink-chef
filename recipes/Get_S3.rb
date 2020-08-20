@@ -43,10 +43,17 @@ remote_file 'Get_from_S3' do
     path '/tmp/flink-1.11.1-bin-scala_2.11.tgz'
 end
 
-tar_extract '/tmp/flink-1.11.1-bin-scala_2.11.tgz' do
-    action     :extract_local
-    target_dir "/"
-    tar_flags [ '-C' ]
+# tar_extract '/tmp/flink-1.11.1-bin-scala_2.11.tgz' do
+#     action     :extract_local
+#     target_dir "/"
+#     tar_flags [ '-C' ]
+# end
+
+archive_file 'extract_Flink_pkg' do
+    destination      '/'
+    mode             '777'
+    options          Array, Symbol
+    path             '/tmp/flink-1.11.1-bin-scala_2.11.tgz' # default value: 'name' unless specified
 end
 
 template '/etc/systemd/system/flink.service' do
