@@ -19,7 +19,7 @@ template 'Log4j_conf' do
   path '/flink-1.11.1/conf/log4j.properties'
 end
 
-template "/etc/supervisord.d/flink.ini" do
+template "/etc/supervisor/conf.d/flink.ini" do
   source "supervisor.ini.erb"
   mode   0644
   notifies :run, "execute[supervisor_reload]", :immediately
