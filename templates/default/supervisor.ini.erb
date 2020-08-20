@@ -1,0 +1,12 @@
+[program:flink]
+command=<%= node['flink']['dir'] %>start-cluster.sh
+numprocs=1
+directory=<%= node['nd']['home'] %>/nd-impl
+autostart=true
+autorestart=unexpected
+startsecs=10
+startretries=3
+redirect_stderr=true
+stdout_logfile=/var/log/supervisor/flink.log
+stdout_logfile_maxbytes=1MB
+stdout_logfile_backups=10
