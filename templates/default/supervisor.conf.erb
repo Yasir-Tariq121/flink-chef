@@ -1,0 +1,6 @@
+[program:flink]
+command=bash start-cluster.sh
+directory=/flink-1.11.1/bin/
+numprocs=1
+redirect_stderr=true
+stdout_logfile=/var/log/supervisor/flink.log
